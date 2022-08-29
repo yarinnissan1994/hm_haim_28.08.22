@@ -38,15 +38,8 @@ int main()
 	for (size_t i = 0; i < 3; i++)
 	{
 		printf("please enter a name and a value:");
-		scanf("%s %d", &s[i].name, &s[i].val);
-		if (strlen(s[i].name) > 5 && s[i].val > 10)
-		{
-			s[i].answer = 1;
-		}
-		else
-		{
-			s[i].answer = 0;
-		}
+		scanf("%s %d", s[i].name, &s[i].val);
+		s[i].answer = (strlen(s[i].name)) > 5 && s[i].val > 10 ? 1 : 0;
 	}
 	FILE* f = fopen("hm3.bin", "w");
 	if (!f)
